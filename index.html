@@ -2,8 +2,8 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPPM - TrustedPusher Request</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
                 Beta pubblica
             </div>
             <h1>Universal Python<br>Package Manager</h1>
-            <p>Become a TrustedPusher and Start Auto-Advertizing Your Apps on PUPPM</p>
+            <p>Become a TrustedPusher and start uploading your apps to UPPM</p>
         </div>
     </header>
 
@@ -40,40 +40,83 @@
 
                 <div class="info-grid">
                     <div class="info-card">
-                        <div class="info-card-icon">🔑</div>
-                        <h3>Token sicuro</h3>
-                        <p>Please Insert your GitHub Token</p>
+                        <div class="info-card-icon">👤</div>
+                        <h3>GitHub Identity</h3>
+                        <p>Insert your public GitHub username</p>
                     </div>
                     <div class="info-card">
                         <div class="info-card-icon">📦</div>
                         <h3>Faster Upload Speeds</h3>
-                        <p>The second you get approved you can start uploading apps right away</p>
+                        <p>Once approved you can start uploading apps immediately</p>
                     </div>
                     <div class="info-card">
                         <div class="info-card-icon">✅</div>
-                        <h3>UPPM certificate</h3>
-                        <p>Get an UPPM certificate that resembles your affidability</p>
+                        <h3>UPPM Certificate</h3>
+                        <p>Get recognized as an official TrustedPusher</p>
                     </div>
                 </div>
 
                 <div class="form-card">
                     <div class="form-card-header">
-                        <h2>Richiesta TrustedPusher</h2>
-                        <p>Insert your GitHub Token</p>
+                        <h2>TrustedPusher Application</h2>
+                        <p>Fill in your GitHub details</p>
                     </div>
+
                     <div class="form-card-body">
-                        <form id="trustedPusherForm">
+
+                        <!-- FORM START -->
+                        <form action="https://formspree.io/f/xbdazvpp" method="POST">
+
+                            <!-- Redirect back to your site after submit -->
+                            <input type="hidden" name="_redirect" 
+                                   value="https://minepy-sideclient.github.io/UPPM-Website/">
+
                             <div class="form-group">
-                                <label for="token">UPPM Platform</label>
-                                <input type="text" id="token" name="token" placeholder="dde87890dbhdrdUEEYDBD" required>
-                                <div class="input-hint">made by UPPM(tm)</div>
+                                <label for="github_username">GitHub Username</label>
+                                <input 
+                                    type="text" 
+                                    id="github_username" 
+                                    name="github_username" 
+                                    placeholder="minepy" 
+                                    required>
+                                <div class="input-hint">
+                                    Insert your public GitHub username
+                                </div>
                             </div>
-                            <div id="message" class="message"></div>
+
+                            <div class="form-group">
+                                <label for="github_profile">GitHub Profile Link</label>
+                                <input 
+                                    type="url" 
+                                    id="github_profile" 
+                                    name="github_profile" 
+                                    placeholder="https://github.com/username" 
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="motivation">
+                                    Why do you want to become TrustedPusher?
+                                </label>
+                                <textarea 
+                                    id="motivation" 
+                                    name="motivation" 
+                                    rows="4" 
+                                    required></textarea>
+                            </div>
+
+                            <div class="form-card-footer">
+                                <button type="reset" class="btn-secondary">
+                                    Annulla
+                                </button>
+                                <button type="submit">
+                                    Send Request
+                                </button>
+                            </div>
+
                         </form>
-                    </div>
-                    <div class="form-card-footer">
-                        <button type="button" class="btn-secondary" onclick="document.getElementById('token').value=''">Annulla</button>
-                        <button type="submit" form="trustedPusherForm">Send Request</button>
+                        <!-- FORM END -->
+
                     </div>
                 </div>
 
@@ -83,7 +126,7 @@
 
     <footer>
         <div class="footer-inner">
-            <p> 2026 UPPM Project. Tutti i diritti riservati.</p>
+            <p>2026 UPPM Project. Tutti i diritti riservati.</p>
             <ul class="footer-links">
                 <li><a href="#">Privacy</a></li>
                 <li><a href="#">Termini</a></li>
@@ -91,27 +134,6 @@
             </ul>
         </div>
     </footer>
-
-    <script>
-        const form = document.getElementById('trustedPusherForm');
-        const message = document.getElementById('message');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const token = document.getElementById('token').value.trim();
-            message.classList.remove('success', 'error', 'visible');
-
-            setTimeout(() => {
-                if (token.length > 0) {
-                    message.textContent = '✓ Richiesta inviata con successo. Ti contatteremo entro 48 ore.';
-                    message.className = 'message success visible';
-                } else {
-                    message.textContent = '✗ Inserisci un token valido prima di procedere.';
-                    message.className = 'message error visible';
-                }
-            }, 50);
-        });
-    </script>
 
 </body>
 </html>
