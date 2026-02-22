@@ -4,41 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPPM - TrustedPusher Request</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <nav>
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <div class="nav-logo-dot"></div>
+                UPPM
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Documentazione</a></li>
+                <li><a href="#">Changelog</a></li>
+                <li><a href="#">Supporto</a></li>
+                <li><a href="#" class="nav-cta">Accedi</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
         <div class="container">
-            <h1>UPPM</h1>
-            <p>Universal Package & Pusher Manager</p>
+            <div class="badge">
+                <div class="badge-dot"></div>
+                Beta pubblica
+            </div>
+            <h1>Universal Python<br>Package Manager</h1>
+            <p>Become a TrustedPusher and Start Auto-Advertizing Your Apps on PUPPM</p>
         </div>
     </header>
 
     <main>
-        <section class="intro">
-            <div class="container">
-                <h2>Benvenuto su UPPM!</h2>
-                <p>Qui puoi richiedere di diventare un <strong>TrustedPusher</strong> inserendo il tuo token. Il tuo token verrà verificato dal nostro sistema quando sarà attivo il backend.</p>
-            </div>
-        </section>
-
         <section class="form-section">
             <div class="container">
-                <h2>Richiesta TrustedPusher</h2>
-                <form id="trustedPusherForm">
-                    <label for="token">Inserisci il tuo Token:</label>
-                    <input type="text" id="token" name="token" placeholder="Inserisci qui il tuo token" required>
-                    <button type="submit">Richiedi</button>
-                </form>
-                <p class="info">*Il backend sarà collegato prossimamente</p>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-card-icon">🔑</div>
+                        <h3>Token sicuro</h3>
+                        <p>Please Insert your GitHub Token</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">📦</div>
+                        <h3>Faster Upload Speeds</h3>
+                        <p>The second you get approved you can start uploading apps right away</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">✅</div>
+                        <h3>UPPM certificate</h3>
+                        <p>Get an UPPM certificate that resembles your affidability</p>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <div class="form-card-header">
+                        <h2>Richiesta TrustedPusher</h2>
+                        <p>Insert your GitHub Token</p>
+                    </div>
+                    <div class="form-card-body">
+                        <form id="trustedPusherForm">
+                            <div class="form-group">
+                                <label for="token">UPPM Platform</label>
+                                <input type="text" id="token" name="token" placeholder="dde87890dbhdrdUEEYDBD" required>
+                                <div class="input-hint">made by UPPM(tm)</div>
+                            </div>
+                            <div id="message" class="message"></div>
+                        </form>
+                    </div>
+                    <div class="form-card-footer">
+                        <button type="button" class="btn-secondary" onclick="document.getElementById('token').value=''">Annulla</button>
+                        <button type="submit" form="trustedPusherForm">Send Request</button>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>© 2026 UPPM Project. Tutti i diritti riservati.</p>
+        <div class="footer-inner">
+            <p> 2026 UPPM Project. Tutti i diritti riservati.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Termini</a></li>
+                <li><a href="#">Contatti</a></li>
+            </ul>
         </div>
     </footer>
+
+    <script>
+        const form = document.getElementById('trustedPusherForm');
+        const message = document.getElementById('message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const token = document.getElementById('token').value.trim();
+            message.classList.remove('success', 'error', 'visible');
+
+            setTimeout(() => {
+                if (token.length > 0) {
+                    message.textContent = '✓ Richiesta inviata con successo. Ti contatteremo entro 48 ore.';
+                    message.className = 'message success visible';
+                } else {
+                    message.textContent = '✗ Inserisci un token valido prima di procedere.';
+                    message.className = 'message error visible';
+                }
+            }, 50);
+        });
+    </script>
+
 </body>
 </html>
