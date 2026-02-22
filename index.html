@@ -1,72 +1,44 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MinePy Launcher</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPPM - TrustedPusher Request</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>UPPM</h1>
+            <p>Universal Package & Pusher Manager</p>
+        </div>
+    </header>
 
-<!-- HEADER -->
-<header>
-  <div class="logo">MinePy</div>
-  <nav>
-    <a href="#features">Features</a>
-    <a href="#screenshots">Preview</a>
-    <a href="https://github.com/minepy-sideclient/MinePy-MInecraft-Launcher/releases/download/Build0.1/minepy_x64.exe" target="_blank">Download</a>
-  </nav>
-</header>
+    <main>
+        <section class="intro">
+            <div class="container">
+                <h2>Benvenuto su UPPM!</h2>
+                <p>Qui puoi richiedere di diventare un <strong>TrustedPusher</strong> inserendo il tuo token. Il tuo token verrà verificato dal nostro sistema quando sarà attivo il backend.</p>
+            </div>
+        </section>
 
-<!-- HERO SECTION -->
-<section class="hero">
-  <h1>MinePy Launcher</h1>
-  <p>Il migliore launcher Minecraft, offline e sicuro.</p>
-  <a class="btn" href="https://github.com/minepy-sideclient/MinePy-MInecraft-Launcher/releases/download/Build0.1/minepy_x64.exe" target="_blank">Scarica ora</a>
-</section>
+        <section class="form-section">
+            <div class="container">
+                <h2>Richiesta TrustedPusher</h2>
+                <form id="trustedPusherForm">
+                    <label for="token">Inserisci il tuo Token:</label>
+                    <input type="text" id="token" name="token" placeholder="Inserisci qui il tuo token" required>
+                    <button type="submit">Richiedi</button>
+                </form>
+                <p class="info">*Il backend sarà collegato prossimamente</p>
+            </div>
+        </section>
+    </main>
 
-<!-- LAUNCHER IMAGE SEPARATA -->
-<section class="launcher-preview">
-  <div class="launcher-image">
-    <img src="Leak.png" alt="Launcher MinePy">
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section id="features" class="features">
-  <h2>Perché scegliere MinePy</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>🚀 Prestazioni</h3>
-      <p>Avvio rapido e gestione intelligente delle versioni.</p>
-    </div>
-    <div class="card">
-      <h3>🎨 Design</h3>
-      <p>Interfaccia moderna e minimal, perfetta per ogni schermo.</p>
-    </div>
-    <div class="card">
-      <h3>🔐 Sicurezza</h3>
-      <p>Nessun dato sensibile salvato localmente. Solo tu controlli il launcher.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SCREENSHOTS -->
-<section id="screenshots" class="screenshots">
-  <h2>Preview</h2>
-  <div class="shots">
-    <div class="shot"><img src="screenshot1.png" alt="Screenshot 1"></div>
-    <div class="shot"><img src="screenshot2.png" alt="Screenshot 2"></div>
-    <div class="shot"><img src="screenshot3.png" alt="Screenshot 3"></div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 MinePy&Co. · <a href="#">Copyright reserved</a></p>
-</footer>
-
-<script src="main.js"></script>
+    <footer>
+        <div class="container">
+            <p>© 2026 UPPM Project. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
 </body>
 </html>
